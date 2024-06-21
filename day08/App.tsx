@@ -32,13 +32,17 @@ function App() {
   };
 
   const handleClick = () => {
-    const { address, age, name } = studentData;
-    const isPass = address.length !== 0 && age.length !== 0 && name.length !== 0;
-    alert(isPass ? "등록" : "빈칸 존재")    
+    const { name } = studentData;
+    fetch("http://localhost:3001/api/student", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name }),
+    });
   };
 
   return (
-    <div className="App">
+    // <div className="App">
+    <div>
       <Input handleChange={handleNameChange} />
       <Input handleChange={handleAgeChange} />
       <Input handleChange={handleAddressChange} />

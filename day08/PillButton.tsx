@@ -5,7 +5,7 @@ export type Color = "#71717A";
 export type PillButtonProps = {
   content?: string;
   backgroundColor?: Color;
-  handleClick: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleClick: (e: MouseEvent<HTMLDivElement>) => void;
 };
 
 const PillButton = ({
@@ -26,7 +26,7 @@ const PillButton = ({
   };
 
   return (
-    <div style={duplicationStyle}>
+    <div style={duplicationStyle} onClick={handleClick}>
       <span>{content}</span>
     </div>
   );

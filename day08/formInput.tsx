@@ -23,10 +23,7 @@ const FormInput = ({
   };
 
   return (
-    <div style={style}>
-      <Input {...getInputProps} />
-      {Component && <Component {...ComponentProps} />}
-    </div>
+    <div style={style}>{Component && <Component {...ComponentProps} />}</div>
   );
 };
 
